@@ -30,6 +30,11 @@ import { hideSnack } from '../features/files/snackbarSlice';
 
 import LockScreen from '../screens/LockScreen';
 
+LogBox.ignoreLogs([
+  'VirtualizedLists should never',
+  'supplied to `DialogInput`',
+]);
+
 export default function Main() {
   const { locked, setLocked } = useLock();
   const { theme } = useAppSelector((state) => state.theme);
